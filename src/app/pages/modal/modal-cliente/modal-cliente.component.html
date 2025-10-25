@@ -1,0 +1,81 @@
+<div>
+    <div class="px-6 py-4 border-b" id="title" fxLayout="row" fxLayoutAlign="start center">
+        <h2 class="title m-0">Cadastro cliente</h2>
+    </div>
+
+    <mat-dialog-content>
+        <div @fadeInUp fxFlex="auto" [formGroup]="form">
+            <div class="px-6 py-4" fxLayout="column">
+                <div class="row">
+                    <mat-form-field fxLayot="column">
+                        <mat-label>Nome</mat-label>
+                        <input matInput required formControlName="nome" placeholder="Nome completo" />
+                    </mat-form-field>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <mat-form-field fxLayot="column">
+                            <mat-label>Telefone</mat-label>
+                            <input matInput required formControlName="telefone" placeholder="Ex.:(99)000000000" />
+                        </mat-form-field>
+                    </div>
+                    <div class="col">
+                        <mat-form-field fxLayot="column">
+                            <mat-label>Cpf</mat-label>
+                            <input matInput required formControlName="cpf" placeholder="Ex.:000.000.000.00" />
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <mat-form-field fxLayot="column">
+                            <mat-label>Endereco</mat-label>
+                            <input matInput required formControlName="endereco" placeholder='Ex.:Rua/Av:Batatinha' />
+                        </mat-form-field>
+                    </div>
+                    <div class="col">
+                        <mat-form-field fxflex="column">
+                            <mat-label>Numero</mat-label>
+                            <input matInput required formControlName="numero" placeholder="Ex.:123" />
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="py-4 descricaoProduto" fxLayout="column">
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <mat-form-field>
+                            <mat-label>Bairro</mat-label>
+                            <input matInput formControlName="bairro" placeholder='Ex:batatinha'>
+                        </mat-form-field>
+                    </div>
+                    <div class="col">
+                        <mat-form-field>
+                            <mat-label>Cep</mat-label>
+                            <input matInput formControlName="cep" placeholder='Ex: 00.000.000'>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <mat-form-field>
+                            <mat-label>Cidade</mat-label>
+                            <input matInput formControlName="cidade" placeholder='Ex:batatinha'>
+                        </mat-form-field>
+                    </div>
+                    <div class="col">
+                        <mat-form-field>
+                            <mat-label>UF</mat-label>
+                            <input matInput formControlName="uf" placeholder='Ex:batatinha'>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </mat-dialog-content>
+
+    <mat-dialog-actions align="end">
+        <button mat-button mat-dialog-close>Cancelar</button>
+        <button mat-button mat-raised-button color="primary" [disabled]="form.invalid"> Salvar </button>
+    </mat-dialog-actions>
+</div>
