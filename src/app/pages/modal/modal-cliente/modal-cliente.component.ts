@@ -24,9 +24,7 @@ export class ModalClienteComponent implements OnInit {
       bairro: ['', Validators.required],
       cidade: ['', Validators.required],
       uf: ['', Validators.required],
-      descricao: [''],
-      valor: ['', Validators.required],
-      valorPromocional: ['', Validators.required],
+      complemento: [''],
     });
   }
 
