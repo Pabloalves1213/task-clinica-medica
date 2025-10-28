@@ -5,7 +5,7 @@
 
     <mat-dialog-content>
         <div @fadeInUp fxFlex="auto" [formGroup]="form">
-            <div class="px-6 py-4" fxLayout="column">
+            <div class="py-4" fxLayout="column">
                 <div class="row">
                     <mat-form-field fxLayot="column">
                         <mat-label>Nome</mat-label>
@@ -28,19 +28,19 @@
                 </div>
                 <div class="row">
                     <div class="col">
+                        <mat-form-field>
+                            <mat-label>Cep</mat-label>
+                            <input matInput formControlName="cep" placeholder='Ex: 00.000.000' (blur)="buscarCep()">
+                        </mat-form-field>
+                    </div>
+                    <div class="col">
                         <mat-form-field fxLayot="column">
                             <mat-label>Endereco</mat-label>
                             <input matInput required formControlName="endereco" placeholder='Ex.:Rua/Av:Batatinha' />
                         </mat-form-field>
                     </div>
-                    <div class="col">
-                        <mat-form-field fxflex="column">
-                            <mat-label>Numero</mat-label>
-                            <input matInput required formControlName="numero" placeholder="Ex.:123" />
-                        </mat-form-field>
-                    </div>
                 </div>
-                <div class="py-4 descricaoProduto" fxLayout="column">
+                <div class="px-6" fxLayout="column">
                 </div>
                 <div class="row">
                     <div class="col">
@@ -50,9 +50,9 @@
                         </mat-form-field>
                     </div>
                     <div class="col">
-                        <mat-form-field>
-                            <mat-label>Cep</mat-label>
-                            <input matInput formControlName="cep" placeholder='Ex: 00.000.000'>
+                        <mat-form-field fxflex="column">
+                            <mat-label>Numero</mat-label>
+                            <input matInput required formControlName="numero" placeholder="Ex.:123" />
                         </mat-form-field>
                     </div>
                 </div>
@@ -73,7 +73,7 @@
                 <div class="row">
                     <mat-form-field>
                         <mat-label>Complemento</mat-label>
-                        <input matInput formControlName="Complemento" placeholder='Ex:casa,apartamento,loja...'>
+                        <input matInput formControlName="complemento" placeholder='Ex:casa,apartamento,loja...'>
                     </mat-form-field>
                 </div>
             </div>
@@ -82,6 +82,6 @@
 
     <mat-dialog-actions align="end">
         <button mat-button mat-dialog-close>Cancelar</button>
-        <button mat-button mat-raised-button color="primary" [disabled]="form.invalid"> Salvar </button>
+        <button mat-button mat-raised-button color="primary" [disabled]="form.invalid" (click)="cadastrar()"> Salvar </button>
     </mat-dialog-actions>
 </div>

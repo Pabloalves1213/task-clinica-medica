@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  url_api: 'http://viacep.com.br/ws'
+  url_api: 'http://viacep.com.br/ws/'
 }; 
 
 

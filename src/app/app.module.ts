@@ -17,11 +17,13 @@ import { ModalMedicoComponent } from './pages/modal/modal-medico/modal-medico.co
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { ModalClienteComponent } from './pages/modal/modal-cliente/modal-cliente.component';
 import { InicioComponent } from './pages/inicio/inicio.component';
-import { MatInputModule} from '@angular/material/input';
+import { MatInputModule } from '@angular/material/input';
 import { ClienteComponent } from './pages/cliente/cliente.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
-
-
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatIconModule } from '@angular/material/icon';
+import { MatTableModule } from '@angular/material/table';
+import { IconModule } from '@visurel/iconify-angular';
 
 @NgModule({
   declarations: [AppComponent,
@@ -47,7 +49,13 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     VexModule,
     MatSlideToggleModule,
     MatInputModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatPaginatorModule,
+    MatIconModule,
+    MatTableModule,
+    IconModule,
+    
+
   ],
   providers: [],
   bootstrap: [AppComponent]
