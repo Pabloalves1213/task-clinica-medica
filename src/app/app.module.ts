@@ -13,7 +13,6 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { ReactiveFormsModule } from '@angular/forms';
-import { ModalMedicoComponent } from './pages/modal/modal-medico/modal-medico.component';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { ModalClienteComponent } from './pages/modal/modal-cliente/modal-cliente.component';
 import { InicioComponent } from './pages/inicio/inicio.component';
@@ -28,7 +27,6 @@ import { IconModule } from '@visurel/iconify-angular';
 @NgModule({
   declarations: [AppComponent,
     MedicoComponent,
-    ModalMedicoComponent,
     ModalClienteComponent,
     InicioComponent,
     ClienteComponent,
