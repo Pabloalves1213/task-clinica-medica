@@ -13,7 +13,7 @@ import { Cliente } from '../../model/cliente';
   styleUrls: ['./cliente.component.scss']
 })
 export class ClienteComponent implements OnInit, AfterViewInit {
-  displayedColumns: string[] = ['nome', 'endereco', 'cep', 'numero', 'bairro', 'actions'];
+  displayedColumns: string[] = ['nome', 'cpf', 'endereco', 'cep', 'numero', 'bairro', 'actions'];
   dataSource!: MatTableDataSource<Cliente>;
   clientes: Cliente[] = [];
 
@@ -42,19 +42,28 @@ export class ClienteComponent implements OnInit, AfterViewInit {
     dialogRef.afterClosed().subscribe(result => {
       console.log(result);
       if (result) {
-         this.clientes.push(result)
+        this.clientes.push(result)
         this.dataSource = new MatTableDataSource(this.clientes);
       }
     });
-    
+
   }
 
-    applyFilter(event: Event) {
+  applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
 
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
+    }
+  }
+
+  delete(cliente: Cliente) {
+    let indiceRemover = this.clientes.indexOf(cliente);
+    if (indiceRemover > -1) {
+      this.clientes.splice(indiceRemover, 1);
+      console.log("Delete depois do splice", this.clientes)
+      this.dataSource = new MatTableDataSource(this.clientes)
     }
   }
 }

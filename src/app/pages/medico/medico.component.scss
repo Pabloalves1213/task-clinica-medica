@@ -7,21 +7,22 @@ table {
   width: 100%;
 }
 
-td, th {
+td,
+th {
   width: 15%;
 }
 
 .input-filtro {
-    width: 100%;
+  width: 100%;
 }
 
 .botao-estilo {
-    background-color: #262B39;
-    color: white;
+  background-color: #262B39;
+  color: white;
 }
 
 .botao-adicionar {
-    color: white;
+  color: white;
 }
 
 .row {
@@ -36,9 +37,9 @@ td, th {
 }
 
 .grade-icon {
-    font-size: 40px;
-    display: inline;
-    align-items: center;
+  font-size: 40px;
+  display: inline;
+  align-items: center;
 }
 
 button[mat-button] mat-icon,

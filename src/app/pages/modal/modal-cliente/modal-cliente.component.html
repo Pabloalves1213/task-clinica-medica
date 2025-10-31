@@ -16,13 +16,15 @@
                     <div class="col">
                         <mat-form-field fxLayot="column">
                             <mat-label>Telefone</mat-label>
-                            <input matInput required formControlName="telefone" placeholder="Ex.:(99)000000000" />
+                            <input matInput required formControlName="telefone" mask="(00) 0 00000000"
+                                placeholder="Ex.:(99)000000000" />
                         </mat-form-field>
                     </div>
                     <div class="col">
                         <mat-form-field fxLayot="column">
                             <mat-label>Cpf</mat-label>
-                            <input matInput required formControlName="cpf" placeholder="Ex.:000.000.000.00" />
+                            <input matInput required formControlName="cpf" mask="000.000.000.00"
+                                placeholder="Ex.:000.000.000.00" />
                         </mat-form-field>
                     </div>
                 </div>
@@ -30,7 +32,8 @@
                     <div class="col">
                         <mat-form-field>
                             <mat-label>Cep</mat-label>
-                            <input matInput formControlName="cep" placeholder='Ex: 00.000.000' (blur)="buscarCep()">
+                            <input matInput formControlName="cep" mask="00.000-000" placeholder='Ex: 00.000.000'
+                                (blur)="buscarCep()">
                         </mat-form-field>
                     </div>
                     <div class="col">
@@ -82,6 +85,7 @@
 
     <mat-dialog-actions align="end">
         <button mat-button mat-dialog-close>Cancelar</button>
-        <button mat-button mat-raised-button color="primary" [disabled]="form.invalid" (click)="cadastrar()"> Salvar </button>
+        <button mat-button mat-raised-button color="primary" [disabled]="form.invalid" (click)="cadastrar()"> Salvar
+        </button>
     </mat-dialog-actions>
 </div>

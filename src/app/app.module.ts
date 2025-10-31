@@ -23,6 +23,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
 import { IconModule } from '@visurel/iconify-angular';
+import { NgxMaskModule } from 'ngx-mask';
 
 @NgModule({
   declarations: [AppComponent,
@@ -52,7 +53,9 @@ import { IconModule } from '@visurel/iconify-angular';
     MatIconModule,
     MatTableModule,
     IconModule,
-    
+    NgxMaskModule.forRoot()
+
+
 
   ],
   providers: [],

@@ -14,7 +14,7 @@ import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 })
 export class ModalClienteComponent implements OnInit {
   form: FormGroup;
-   erro: string | null = null;
+  erro: string | null = null;
 
   constructor(private cd: ChangeDetectorRef, private fb: FormBuilder, private clienteService: ClienteService, private readonly dialogRef: MatDialogRef<ModalClienteComponent>) {
     this.form = this.fb.group({
@@ -31,9 +31,9 @@ export class ModalClienteComponent implements OnInit {
     });
   }
 
-   buscarCep() {
+  buscarCep() {
     const cep = this.form.get('cep')?.value;
-    if(!cep) return;
+    if (!cep) return;
 
     if (!cep) return;
 
@@ -64,9 +64,9 @@ export class ModalClienteComponent implements OnInit {
       }
     });
   }
-  
-  cadastrar(){
-    this.dialogRef.close( this.form?.value)
+
+  cadastrar() {
+    this.dialogRef.close(this.form?.value)
   }
 
   ngOnInit(): void {
