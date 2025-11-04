@@ -31,7 +31,6 @@ import { NgxMaskModule } from 'ngx-mask';
     ModalClienteComponent,
     InicioComponent,
     ClienteComponent,
-
   ],
   imports: [
     BrowserModule,

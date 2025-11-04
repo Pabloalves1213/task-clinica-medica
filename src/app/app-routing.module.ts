@@ -11,6 +11,7 @@ const routes: Routes = [
     component: CustomLayoutComponent,
     children: [
       { path: '', component: InicioComponent },
+      { path: 'home', component: InicioComponent },
       { path: 'cliente', component: ClienteComponent },
       { path: 'medico', component: MedicoComponent },
     ]

@@ -36,10 +36,10 @@ export class MedicoComponent implements OnInit {
 
   ngOnInit() {
     this.medicos = [
-      { id: 1, nome: 'Angelica', telefone: '0500 2025 007', crm: '18541', area: 'Pediatrico', plano: 'N' },
-      { id: 2, nome: 'Eliana', telefone: '0500 2025 020', crm: '18542', area: 'clinico Geral', plano: 'S' },
-      { id: 3, nome: 'Xuxa', telefone: '0500 2025 040', crm: '18543', area: 'Neurologista', plano: 'S' },
-      { id: 4, nome: 'Didi', telefone: '0500 2025 100', crm: '18544', area: 'Urologista', plano: 'N' },
+      { id: 1, nome: 'Angelica', telefone: '0500 2025 007', crm: '18541', area: 'Pediatrico', plano: 'Não' },
+      { id: 2, nome: 'Eliana', telefone: '0500 2025 020', crm: '18542', area: 'clinico Geral', plano: 'Sim' },
+      { id: 3, nome: 'Xuxa', telefone: '0500 2025 040', crm: '18543', area: 'Neurologista', plano: 'Sim' },
+      { id: 4, nome: 'Didi', telefone: '0500 2025 100', crm: '18544', area: 'Urologista', plano: 'Não' },
     ];
     this.dataSource = new MatTableDataSource(this.medicos);
   }
