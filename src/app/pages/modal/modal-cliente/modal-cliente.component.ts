@@ -2,8 +2,8 @@ import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { fadeInUp400ms } from '../../../../@vex/animations/fade-in-up.animation';
 import { stagger60ms } from '../../../../@vex/animations/stagger.animation';
-import { ClienteService } from '../../../model/cliente.service';
-import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { MatDialogRef } from '@angular/material/dialog';
+import { ClienteService } from '../../../services/cliente.service';
 
 @Component({
   selector: 'vex-modal-cliente',
@@ -18,7 +18,7 @@ export class ModalClienteComponent implements OnInit {
 
   constructor(private cd: ChangeDetectorRef, private fb: FormBuilder, private clienteService: ClienteService, private readonly dialogRef: MatDialogRef<ModalClienteComponent>) {
     this.form = this.fb.group({
-      nome: ['', Validators.required],
+      nome: ['', [Validators.required, Validators.pattern('^[a-zA-Z ]*$')]],
       telefone: ['', Validators.required],
       cpf: ['', Validators.required],
       endereco: ['', Validators.required],

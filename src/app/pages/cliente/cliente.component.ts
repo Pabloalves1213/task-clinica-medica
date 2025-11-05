@@ -6,6 +6,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { Cliente } from '../../model/cliente';
+import { Endereco } from '../../model/endereco';
 
 @Component({
   selector: 'vex-cliente',
@@ -42,6 +43,15 @@ export class ClienteComponent implements OnInit, AfterViewInit {
     dialogRef.afterClosed().subscribe(result => {
       console.log(result);
       if (result) {
+        let endereco = new Endereco()
+        endereco.cep = result.cep
+        endereco.bairro = result.bairro
+        endereco.cidade = result.cidade
+        endereco.complemento = result.complemento
+        endereco.numero = result.numero
+        endereco.uf = result.uf
+        endereco.endereco = result.endereco
+        result.endereco = endereco
         this.clientes.push(result)
         this.dataSource = new MatTableDataSource(this.clientes);
       }

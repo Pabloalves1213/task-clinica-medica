@@ -10,6 +10,7 @@
                     <mat-form-field fxLayot="column">
                         <mat-label>Nome</mat-label>
                         <input matInput required formControlName="nome" placeholder="Nome completo" />
+                        <mat-error *ngIf="form.get('nome')?.errors?.pattern"> Por favor, insira apenas letras.</mat-error>
                     </mat-form-field>
                 </div>
                 <div class="row">
@@ -23,8 +24,9 @@
                     <div class="col">
                         <mat-form-field fxLayot="column">
                             <mat-label>Cpf</mat-label>
-                            <input matInput required formControlName="cpf" mask="000.000.000.00"
+                            <input matInput required formControlName="cpf" mask="000.000.000-00"
                                 placeholder="Ex.:000.000.000.00" />
+                                <mat-error *ngIf="form.get('cpf').hasError('required')">cpf s</mat-error>
                         </mat-form-field>
                     </div>
                 </div>
@@ -55,7 +57,7 @@
                     <div class="col">
                         <mat-form-field fxflex="column">
                             <mat-label>Numero</mat-label>
-                            <input matInput required formControlName="numero" placeholder="Ex.:123" />
+                            <input matInput required formControlName="numero" mask="0000" placeholder="Ex.:123" />
                         </mat-form-field>
                     </div>
                 </div>

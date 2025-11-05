@@ -81,7 +81,7 @@ export class AppComponent {
      {
         type: 'link',
         label: 'Home',
-        route: '/inicio',
+        route: '/home',
         icon: icLayers
       },
 
