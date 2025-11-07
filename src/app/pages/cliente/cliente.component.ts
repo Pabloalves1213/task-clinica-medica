@@ -30,11 +30,27 @@ export class ClienteComponent implements OnInit, AfterViewInit {
     });
   }
 
-  ngOnInit(): void {
-  }
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
+  }
+
+  ngOnInit(): void {
+    this.clientes = [
+      {
+        nome: 'Angelica', telefone: '0500 2025 007', cpf: '255.444.444-41',
+        endereco: new Endereco("Rua President kennedy", "39270096", 409, "Centro")
+      },
+      {
+        nome: 'Maria', telefone: '0500 2025 014', cpf: '333.333.333-41',
+        endereco: new Endereco("Rua 22", "39272-466", 400, "cidade jardim")
+      },
+      {
+        nome: 'Angelica', telefone: '0500 2025 020', cpf: '222.222.222-22',
+        endereco: new Endereco("Rua 19", "39272-462", 500, "cidade jardim")
+      },
+    ];
+    this.dataSource = new MatTableDataSource(this.clientes);
   }
 
   modalCliente() {
@@ -76,5 +92,5 @@ export class ClienteComponent implements OnInit, AfterViewInit {
       this.dataSource = new MatTableDataSource(this.clientes)
     }
   }
-}
 
+}
