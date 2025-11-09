@@ -6,6 +6,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { Cliente } from '../../model/cliente';
+import { Endereco } from '../../model/endereco';
 
 @Component({
   selector: 'vex-cliente',
@@ -29,11 +30,27 @@ export class ClienteComponent implements OnInit, AfterViewInit {
     });
   }
 
-  ngOnInit(): void {
-  }
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
+  }
+
+  ngOnInit(): void {
+    this.clientes = [
+      {
+        nome: 'Angelica', telefone: '0500 2025 007', cpf: '255.444.444-41',
+        endereco: new Endereco("Rua President kennedy", "39270096", 409, "Centro")
+      },
+      {
+        nome: 'Maria', telefone: '0500 2025 014', cpf: '333.333.333-41',
+        endereco: new Endereco("Rua 22", "39272-466", 400, "cidade jardim")
+      },
+      {
+        nome: 'Angelica', telefone: '0500 2025 020', cpf: '222.222.222-22',
+        endereco: new Endereco("Rua 19", "39272-462", 500, "cidade jardim")
+      },
+    ];
+    this.dataSource = new MatTableDataSource(this.clientes);
   }
 
   modalCliente() {
@@ -42,6 +59,15 @@ export class ClienteComponent implements OnInit, AfterViewInit {
     dialogRef.afterClosed().subscribe(result => {
       console.log(result);
       if (result) {
+        let endereco = new Endereco()
+        endereco.cep = result.cep
+        endereco.bairro = result.bairro
+        endereco.cidade = result.cidade
+        endereco.complemento = result.complemento
+        endereco.numero = result.numero
+        endereco.uf = result.uf
+        endereco.endereco = result.endereco
+        result.endereco = endereco
         this.clientes.push(result)
         this.dataSource = new MatTableDataSource(this.clientes);
       }
@@ -66,5 +92,5 @@ export class ClienteComponent implements OnInit, AfterViewInit {
       this.dataSource = new MatTableDataSource(this.clientes)
     }
   }
-}
 
+}

@@ -12,8 +12,8 @@ export class ClienteService {
 
   constructor(private http: HttpClient) { }
 
-  buscarCep(cep: string): Observable <any> {
+  buscarCep(cep: string): Observable<any> {
     return this.http.get(this.urlApi + cep + '/json');
-   }
-   
+  }
+
 }
