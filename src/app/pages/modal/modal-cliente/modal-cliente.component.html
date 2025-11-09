@@ -48,7 +48,7 @@
                         <mat-form-field fxLayot="column">
                             <mat-label>Endereco</mat-label>
                             <input matInput required formControlName="endereco" placeholder='Ex.:Rua/Av:Batatinha' />
-                            <mat-error *ngIf="form.get('cpf').hasError('required')">"Este campo é obrigatório."
+                            <mat-error *ngIf="form.get('endereco').hasError('required')">"Este campo é obrigatório."
                             </mat-error>
                         </mat-form-field>
                     </div>
@@ -60,15 +60,15 @@
                         <mat-form-field>
                             <mat-label>Bairro</mat-label>
                             <input matInput formControlName="bairro" placeholder='Ex:batatinha'>
-                            <mat-error *ngIf="form.get('cpf').hasError('required')">"Este campo é obrigatório."
+                            <mat-error *ngIf="form.get('bairro').hasError('required')">"Este campo é obrigatório."
                             </mat-error>
                         </mat-form-field>
                     </div>
                     <div class="col">
                         <mat-form-field fxflex="column">
                             <mat-label>Numero</mat-label>
-                            <input matInput required formControlName="numero" mask="000" placeholder="Ex.:123" />
-                            <mat-error *ngIf="form.get('cpf').hasError('required')">"Este campo é obrigatório."
+                            <input matInput required formControlName="numero"  placeholder="Ex.:123" />
+                            <mat-error *ngIf="form.get('numero').hasError('required')">"Este campo é obrigatório."
                             </mat-error>
                         </mat-form-field>
                     </div>
@@ -78,7 +78,7 @@
                         <mat-form-field>
                             <mat-label>Cidade</mat-label>
                             <input matInput formControlName="cidade" placeholder='Ex:batatinha'>
-                            <mat-error *ngIf="form.get('cpf').hasError('required')">"Este campo é obrigatório."
+                            <mat-error *ngIf="form.get('cidade').hasError('required')">"Este campo é obrigatório."
                             </mat-error>
                         </mat-form-field>
                     </div>
